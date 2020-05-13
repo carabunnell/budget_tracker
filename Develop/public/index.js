@@ -1,3 +1,11 @@
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    console.log('ServiceWorker registration successful with scope:',  registration.scope);
+  }).catch(function(error) {
+    console.log('ServiceWorker registration failed:', error);
+  });
+}
+
 let transactions = [];
 let myChart;
 
@@ -151,3 +159,4 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
